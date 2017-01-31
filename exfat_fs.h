@@ -497,8 +497,8 @@ int exfat_setattr(struct dentry *dentry, struct iattr *attr);
 int exfat_getattr(const struct path *path, struct kstat *stat,
 		unsigned int request_mask, unsigned int query_flags);
 #else
-int exfat_getattr(struct vfsmount *mnt, struct dentry *dentry,
-		struct kstat *stat);
+int exfat_getattr(struct const, struct kstat *stat,
+		u32 request_mask, unsigned int flags);
 #endif
 #endif
 int exfat_file_fsync(struct file *file, loff_t start, loff_t end, int datasync);

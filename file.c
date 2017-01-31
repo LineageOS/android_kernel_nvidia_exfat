@@ -263,8 +263,8 @@ int exfat_getattr(struct user_namespace *mnt_uerns, const struct path *path,
 int exfat_getattr(const struct path *path, struct kstat *stat,
 		unsigned int request_mask, unsigned int query_flags)
 #else
-int exfat_getattr(struct vfsmount *mnt, struct dentry *dentry,
-		struct kstat *stat)
+int exfat_getattr(const struct path *path, struct kstat *stat,
+		u32 request_mask, unsigned int flags)
 #endif
 #endif
 {
